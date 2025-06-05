@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: 'Tomorrow', sans-serif;
+  background-color: #EAF2FF;
+  color: #EAF2FF;
+}
+
+/* === Navigation Bar (from portfolio.css) === */
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 40px;
+background: #EAF2FF;
+display: flex;
+align-items: center;
+gap: 20px;
+padding: 0 20px;
+border-bottom: none;
+z-index: 100;
+font-size: 16px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0E1158;
+  cursor: pointer;
+}
+
+.navbar a.active {
+  color: red;
+}
+
+
+.cv-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.cv-column {
+  background: #292929;
+  padding: 20px;
+  color: #EAF2FF;
+  border-radius: 4px;
+}
+
+.cv-column h2 {
+  margin-top: 0;
+  font-size: 16px;
+}

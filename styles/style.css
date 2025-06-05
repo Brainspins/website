@@ -1,0 +1,177 @@
+/* === Load Tomorrow font === */
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow&display=swap');
+
+/* === 1) Global reset & base styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Tomorrow', sans-serif;
+  background: #EAF2FF;
+  color: #0E1158;
+  overflow-x: hidden; /* prevent horizontal scrollbar */
+}
+
+/* === 2) Navigation Bar (fixed at top; matches portfolio style) === */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #EAF2FF;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  border-bottom: none;
+  z-index: 100;
+  font-size: 16px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #0E1158;
+}
+
+.navbar a.active {
+  color: red;
+}
+
+/* === 3) Main content padding to account for fixed navbar === */
+main {
+  padding-top: 40px; /* height of navbar */
+}
+
+/* === 4) Intro + "What's On" section (two-column) === */
+.intro-whats-on {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px 40px;
+  gap: 40px;
+}
+
+/* Container to constrain width on large screens */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Two-column layout inside container */
+.two-column {
+  display: flex;
+  gap: 40px;
+}
+
+/* === 5) Introduction text styling === */
+.intro-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* === 6) "What's On" panel styling === */
+.whats-on {
+  flex: 1;
+}
+
+.whats-on-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #0E1158;
+}
+
+.whats-on-events {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+}
+
+.event {
+  width: 220px; /* adjust to desired size */
+  background: #EAF2FF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+}
+
+
+.event-date {
+  background: #0E1158;
+  color: #EAF2FF;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.event-link a {
+  display: block;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #0E1158;
+  text-decoration: underline;
+}
+
+.event-location,
+.event-sub {
+  padding: 0 10px 8px 10px;
+  font-size: 12px;
+  color: #0E1158;
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.event-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* === 7) Footer styling === */
+.site-footer {
+  margin-top: 40px;
+  padding: 20px 40px;
+  background: #0E1158;
+  color: #EAF2FF;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* === 8) Responsive adjustments === */
+@media (max-width: 900px) {
+  .intro-whats-on {
+    flex-direction: column;
+  }
+  .two-column {
+    flex-direction: column;
+  }
+  .intro-text, .whats-on {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 10px;
+    gap: 12px;
+  }
+  .intro-whats-on {
+    padding: 10px 20px;
+  }
+  .site-footer {
+    padding: 10px 20px;
+  }
+}

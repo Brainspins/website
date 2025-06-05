@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Anna Musikhina</title>
+  <link rel="stylesheet" href="styles/portfolio.css" />
+</head>
+<body>
+
+  <!-- 1) Navigation Bar (fixed at top) -->
+  <nav class="navbar">
+    <a href="index.html">Anna Musikhina</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- 2) Filter Buttons (fixed below navbar) -->
+  <div class="filters">
+    <div class="filter-group">
+      <span data-filter="all" class="active">All</span>
+      <span data-filter="project">Project</span>
+      <span data-filter="workshop">Workshop</span>
+      <span data-filter="research">Research</span>
+      <span data-filter="performance">Performance</span>
+      <span data-filter="in progress">In Progress</span>
+    </div>
+    <div class="filter-group">
+      <span data-filter="2025">2025</span>
+      <span data-filter="2024">2024</span>
+      <span data-filter="2023">2023</span>
+      <span data-filter="2022">2022</span>
+    </div>
+  </div>
+
+  <!-- 3) OPEN the horizontal wrapper BEFORE your first <section> -->
+    <div class="portfolio-wrapper">
+        <section class="project-block" data-tags="project 2025">
+            <div class="project-header">
+                <h2>Active Listening</h2>
+                <div class="project-subtitle">Interactive visual installation, March 2025</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/1AL/al1.jpg" alt="al1" />
+                <img class="carousel-img" src="assets/images/1AL/al2.jpg" alt="al2" />
+                <img class="carousel-img" src="assets/images/1AL/al3.png" alt="al3" />
+                <img class="carousel-img" src="assets/images/1AL/al4.jpg" alt="al4" />
+            </div>
+            <div class="project-text">
+                <p>Are your devices listening to you? This is worrisome question remains in our minds, especially when after random conversations appear terribly targeted advertisements on our devices.</p>
+                <p>While the answer remains open, but there is no reason to believe that it does not. The response is based on investigations and articles by 404media (links below), and artist observations which confirm a high probability that our devices hear us.</p>
+                <p>This artwork links the colonial legacy of surveillance, where data and resources were extracted to dominate people, with modern methods of data production, where people are reduced to "buy-ready" profiles.</p>
+                <p>The work explores how seemingly convenient technologies like voice assistants perpetuate reinforce systems, and asks: How can people regain their right to control in a world dominated by data extraction and transformation into a commodity?</p>
+                <p>The installation includes 2 connected pieces which place separately:<br>
+                “First”: This piece triggers visitor to share personal speech through microphone, seemingly to “train a new AI model.” On the screen shows log of the generation process. Include neon light 100 x 25 cm.<br>
+                “Second”: uses speech prompt, makes and shows AI generated ads on a big screen/ projection in real time.
+                </p>
+            </div>
+            <div class="project-lines line skew-left"></div>
+            <div class="project-text">
+                <p>Tech: Locally trained StreamDiffusion AI model, ControlNet and Whisper Libraries. TouchDesigner. Everything is processing locally, no access to the internet.</p>
+                <p>Links 404media: <a href="https://www.404media.co/heres-the-pitch-deck-for-active-listening-ad-targeting/" class="underline" target="_blank" rel="noopener noreferrer">1, </a><a href="https://www.404media.co/cmg-cox-media-actually-listening-to-phones-smartspeakers-for-ads-marketing/" class="underline" target="_blank" rel="noopener noreferrer">2, </a><a href="https://www.404media.co/mindsift-brags-about-using-smart-device-microphone-audio-to-target-ads-on-their-podcast/" class="underline" target="_blank" rel="noopener noreferrer">and 3</a> <a href="https://www.documentcloud.org/documents/25051283-cmg-pitch-deck-on-voice-data-advertising-active-listening/?ref=404media.co" class="underline" target="_blank" rel="noopener noreferrer"> Pitch deck by CMG.</a></p>
+            </div>
+            <div class="project-lines line skew-right"></div>
+            <div class="project-text">
+                <p><strong>Graduation project</strong> MFA Media art, design and technology program, Frank Mohr Institute, Groningen.</p>
+                <p>Exhibited at NP3 Gallery and Niemeijer, Groningen.</p>
+            </div>
+        </section>
+
+        <section class="project-block" data-tags="workshop 2025">
+            <div class="project-header">
+                <h2>Reimagine algorithmic structures</h2>
+                <div class="project-subtitle">Workshop, April 2025</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/2Workshop/w1.jpg" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/2Workshop/w2.jpg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/2Workshop/w3.jpg" alt="Placeholder 3" />
+                <img class="carousel-img" src="assets/images/2Workshop/w4.jpg" alt="Placeholder 4" />
+            </div>
+
+            <div class="project-text">
+                <p>"Yo, first I want to thank the great algorithm that pull us all here." – Donald Glover, Emmys acceptance speech, 2017.</p>
+                <p>Because algorithms impact not only individuals but also collectives seeing us as datasets and forming subjects, collectives, and even erasing our agency, the artist invites participants to explore these dynamics through a hands-on, collaborative approach. By making and experimenting together, we explore how algorithms emerge, how they function, and how they might be reclaimed for the public good rather than serving the interests of big tech companies. The main goal is to collectively find new creative ways to communicate, resist, and collaborate with algorithms.</p>
+                <p>The artist believes that together we can redirect algorithmic structures to serve us, fundamentally transform the data extraction process, and reimagine our role in digital systems — not as passive sources of data, but as active agents of meaning. Through speculative play, embodied exercises, and critical dialogue, this workshop opens a space where we can rehearse futures in which algorithms are shaped by collective values, care, and creativity.</p>
+            </div>
+
+            <!-- Line rotated at +4.17° -->
+            <div class="project-lines" style="transform: rotate(4.17deg);"></div>
+
+            <div class="project-text">
+                <p>Duration of lecture – 30 min, hands-on part – 1 hour, discussions – 1 hour.</p>
+            </div>
+
+            <!-- Line rotated at +2.75° -->
+            <div class="project-lines" style="transform: rotate(2.75deg);"></div>
+
+            <div class="project-text">
+                <p>Photos from first workshop in Frank Mohr Institute, Groningen.<br>Held twice.</p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="research 2025">
+            <div class="project-header">
+                <h2>Digital wisdom manual</h2>
+                <div class="project-subtitle">Thesis paper, April, 2025</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/3DW/dw2.png" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/3DW/dw1.jpg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/3DW/dw3.png" alt="Placeholder 3" />
+            </div>
+
+            <div class="project-text">
+                <p>This is part of Digital manual of World for Us which explore dilemmas and actions related to human interaction with the digital world, emphasising practical and speculative considerations.</p>
+                <p>And at the same time ia asking questions: How could we deal with amount of data which we produced? What is the digital world, whose digital body we have created and in which we live? Do we ready to delete our data before death and how we can do it? And etc.</p>
+                <p>The final digital manual includes scores for deleting and manipulating data before and after death. Visuals with results of research (images, photo/video of performances, data noise, data decomposing, etc.). 
+            Audience will feel the failure and unwillingness to cope with the amount of data they have created over their life. This reflects not a deliberate refusal but an inherent limitation of our condition, where reliance on digital automation takes over human agency. But at the same time audience will feel hope and power of Digital Wisdom.</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: Blender. Sound: machine noise.</p>
+                <p>Screenshot from video projection. Project is ongoing.</p>
+            </div>
+
+            <!-- Line rotated at +2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p><a href="https://drive.proton.me/urls/D6CXQFE65W#freUWocFj2Oq" class="underline" target="_blank" rel="noopener noreferrer">Download the thesis.</a></p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="project 2024">
+            <div class="project-header">
+                <h2>Guān Luò Yīn</h2>
+                <div class="project-subtitle">Interactive audiovisual installation, November, 2024</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/4GLY/gly2.jpg" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/4GLY/gly1.jpeg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/4GLY/gly3.jpeg" alt="Placeholder 3" />
+                <img class="carousel-img" src="assets/images/4GLY/gly4.jpeg" alt="Placeholder 4" />
+            </div>
+
+            <div class="project-text">
+                <p>Guān Luò Yīn is a ritual in Taoist belief where it is believed that, under the guidance of a Taoist priest, the soul of a living person can transition to another world to visit the deceased, make up for regrets, or reflect on their career, fate, and health.</p>
+                <p>Inspired by this, we use the art space as a medium to create an interactive installation that combines audio and videos, with red strings and cloth. Through sound and immersive sensory experiences, we aim to depict the transition process from the physical world to the spiritual or afterlife world, inviting the audience to reflect on the emotional solace that religious and spiritual rituals provide.</p>
+                <p>This work includes both sound and visual installations. The sound installation consists of red strings hanging around the space, combined with infrasound.</p>
+                <p>The visual installation is made up of three small screens, each playing a slow-motion video related to rituals. These videos respectively represent the afterlife, money and career, and the body and health.</p>
+            </div>
+
+            <!-- Line rotated at 0.2° -->
+            <div class="project-lines" style="transform: rotate(0.2deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: Touchdesigner, MaxMsp, Ableton, sensors Piezo, RPI 4.</p>
+                <p>Material: treads, canvas, bells, 3 screens, fabric.</p>
+                <p>Size of the room 400 x 150 x 170 cm</p>
+            </div>
+
+            <!-- Line rotated at +2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Collaboration with Yu Shi Wei, funded by SIGN Gallery Groningen for Sound music festival 2024.</p>
+                <p>Exhibited at SIGN Gallery, Groningen.</p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="project 2024">
+            <div class="project-header">
+                <h2>D.ecosystem</h2>
+                <div class="project-subtitle">Audiovisual installation, June, 2024</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/5DE/de2.jpg" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/5DE/de1.jpg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/5DE/de3.jpg" alt="Placeholder 3" />
+                <img class="carousel-img" src="assets/images/5DE/de4.jpg" alt="Placeholder 4" />
+            </div>
+
+            <div class="project-text">
+                <p>In this work, the artist turns to the digital world, which is created by people, but also has its own life, invisible and uncontrollable.
+            In an attempt to comprehend the nature of the digital world, you will find yourself in a digital ecosystem intertwined with three levels of its development</p>
+                <p>There is an anonymous, faceless World inside, indifferent to us as human beings, despite all our efforts to change, shape, improve and even save this world. This indifference arises from the lack of digital wisdom in our lives and we are left alone with emptiness and disappointment.</p>
+                <p>World for us not only implies a human-centred way of being, but also points to a vague realm of non-human, which is not for us. We can generalise this to say that we are unable to control or predict any digital or natural disaster.</p>
+                <p>World without us is sublime and inaccessible, with dark magnetic liquid living on its own terms. Anticipation of the threat from the rapid development of technology is already wrong. With every passing minute, we go too far, but do not reach this world and return to the World for us.
+            Interaction with the digital ecosystem is impossible, but influence and change are always possible in both directions.</p>
+            </div>
+
+            <!-- Line rotated at 2.51° -->
+            <div class="project-lines" style="transform: rotate(2.51deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: Arduino + electromagnet + ferromagnet liquid, audio amplifier.</p>
+                <p>Size of the installation: 200 x 45 x 145 cm</p>
+            </div>
+
+            <!-- Line rotated at +2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Sound by Alexander Shlyakhov.<br>Exhibited at  De Proef, Frederiksoord.</p>
+                <p><a href="https://www.youtube.com/watch?v=GjXL8wiQG8g" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="project 2024">
+            <div class="project-header">
+                <h2>Archive of ourselves</h2>
+                <div class="project-subtitle">Video installation, April, 2024</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/6AO/ao2.png" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/6AO/ao1.jpg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/6AO/ao3.png" alt="Placeholder 3" />
+                <img class="carousel-img" src="assets/images/6AO/ao4.png" alt="Placeholder 4" />
+            </div>
+
+            <div class="project-text">
+                <p>The digital footprints we leave every day lose their identity becoming an anonymous client ID with a set of our characteristics and preferences. Our data is no longer ours, although we should be able to own, use and dispose of it. The personality as a unique subject is no longer important for companies which collect our data.</p>
+                <p>In this work the artist explores the idea of data depersonalization and protection. 
+            The encounter of a depersonalised AI with personal memories and experiences transforms them into a visually different video with lost subjectivity. Loss of subjectivity of the archive allows it to protect personal data and doesn’t allow the original to be returned.</p>
+                <p>In three videos the visual component changes  depending on the depth of penetration of AI as a tool. It is also presented with the original video archive which has been modified.</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: Touchdesigner, AI - StreamDiffusion, 6 old TVs</p>
+            </div>
+
+            <!-- Line rotated at +2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Exhibited at FMI, Groningen for Encounters in Artistic Research and ELSA LAB Network event</p>
+                <p><a href="https://www.youtube.com/playlist?list=PLUfpRY_3O6nnvSrNHBKyy3HkM2rZb8Mdi" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="performance 2024">
+            <div class="project-header">
+                <h2>MADxNAIP</h2>
+                <div class="project-subtitle">Residency, February, 2024</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/7GT/gt2.jpg" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/7GT/gt1.jpg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/7GT/gt3.jpg" alt="Placeholder 3" />
+            </div>
+
+            <div class="project-text">
+                <p>The first part being a series of 4 Live Lab sessions exploring core concepts behind our collaboration and the art of co-making in an ‘open space’ domain. The second part is a 4-Day residency on location at the Grand Theatre, Groningen, working in a variety of their spaces physically and virtually. This season's residency explores further into the creative artistic realm between the digital and physical domains. Collaborating with NAIP students and faculty from the Icelandic Academy of the arts. The collective explore themes of the sensuous and the imperfect.</p>
+                <p>The module focuses on sharing the process of art making with artists of different disciplines in order to look at this creative process from many different perspectives. We think outside of the box, we share our ideas, we learn together, we inspire one another and form an artist collective and network. The module is hosted in The Grand Theatre, Groningen, and culminates on the final day of the residency in a sharing of work created in the Grote Zaal. Throughout the journey we will explore the fusion of 4 pillars of making: sonic, visual, technological and performative.</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p><a href="https://www.youtube.com/live/dGDffZ0RtiY?si=r1V2eyb6oh94RR4x" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+            <!-- Line rotated at +2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+        </section>
+
+
+        <section class="project-block" data-tags="project 2023">
+            <div class="project-header">
+                <h2>Chaos of dreams</h2>
+                <div class="project-subtitle">Interactive audiovisual installation, November, 2023</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/8Chaos/chaos2.jpeg" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/8Chaos/chaos1.jpeg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/8Chaos/chaos3.png" alt="Placeholder 3" />
+            </div>
+
+            <div class="project-text">
+                <p>This work involves finding order in a magical world collected in pieces.
+            Dreams particles are scattered unpredictably everywhere. They interact with light and sound, creating chaos that seems uncontrollable and destabilising.</p>
+                <p>However, it has a "will" as the main driving force - the deep conviction that nothing happens unless somebody or some being wills it to happen. 
+            Everything important is happening inside. There are no accidents in the our world.</p>
+                <p>The installation is interactive: turn on the flashlight and explore the coloured shadows of the installation, you can shine it inside and hear a mysterious voice.</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: Arduino, Max Msp, motor.</p>
+                <p>Material: fabric, metal sculpture 50 x 15 x 15 cm, plastic sheets, paper.</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Made with Letizia Roccaro as part of hackathon for Sound music festival 2023, Groningen. Exhibited at Sign Gallery.</p>
+                <p><a href="https://www.instagram.com/reel/CzTPUjwCesI/?igsh=MXhnd2x5dDZuMmlpaQ%3D%3D" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="project 2023">
+            <div class="project-header">
+                <h2>Voices in the room</h2>
+                <div class="project-subtitle">Interactive audiovisual installation, October, 2023</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/9VIR/vir2.png" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/9VIR/vir1.png" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/9VIR/vir3.png" alt="Placeholder 3" />
+                <img class="carousel-img" src="assets/images/9VIR/vir4.png" alt="Placeholder 4" />
+            </div>
+
+            <div class="project-text">
+                <p>This work shows that there is no difference between a living person and a heartless mechanism when we thoughtlessly do things with data. 
+            Repetition, mechanicality and aimlessness arise when we thoughtlessly scroll, photograph the same thing, taking a reflex phone out of pocket, stop looking, to be conscious and to notice. The human ceases to differ from the mechanism, from the media image. Media image - a digital body, becomes for a moment more interesting than the living machine itself.</p>
+                <p>The installation is interactive: As you scroll through the tablet screen, you come across the once recorded messages, the sound of which turns into an image on the screen. These scattering dots remind us of the endless flow of monotonous information that we create every day.</p>
+            </div>
+
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Messages:<br> "Consume without asking questions."<br>
+            "We produce seven hundred twenty thousand hours of YouTube videos daily, we can't consume that much."<br>
+            "The search for cheap dopamine."<br>
+            "Happiness for everyone, free of charge, and let no one be left out."<br>
+            "Nothing has changed."<br>
+            "To feel inner void in the information space."<br>
+            "I want to learn how to cultivate my own ideas and thoughts."</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: MaxMsp, tablet, screen.</p>
+                <p><a href="https://www.instagram.com/reel/C0wjH2cNN7_/?igsh=N2NhMngzbzlqajRi" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="project 2022">
+            <div class="project-header">
+                <h2>Bye World</h2>
+                <div class="project-subtitle">Audiovisual installation, June, 2022</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/10BW/bw1.png" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/10BW/bw3.jpeg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/10BW/bw2.jpeg" alt="Placeholder 3" />
+            </div>
+
+            <div class="project-text">
+                <p>By getting information reproduction tools, we create and leave a huge digital footprints, absolutely justifying the status of Homo Sapiens  Digital. In most cases, without thinking about what happens to that data set after the owner dies.</p>
+                <p>The concept of Homo Sapiens Digital is, among other things, about the development of digital wisdom, which will be «digital purity»: do not leave behind useless information globally, loading the servers and networks with continuously published content from our lives. </p>
+                <p>The project suggests turning to digital wisdom and digital purity during life and the process of decomposing the digital personality profile after death.</p>
+            </div>
+
+            <!-- Line rotated at 2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Tech: Blender, Ableton.</p>
+                <p>Size of whole projections: 200 x 200 cm</p>
+            </div>
+
+            <!-- Line rotated at 2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Collaboration with Alexander Shlyakhov.<br><strong>Graduation project</strong> from the New Media in Contemporary Art program Moscow School of Contemporary Art.</p>
+                <p>Exhibited at 30/7 Gallery and Zaryadye, Moscow.</p>
+                <p><a href="https://youtube.com/playlist?list=PLUfpRY_3O6nkTyuTSAmbqOUGR3aRCKeV_&si=3l4p4kbr4VALZKut" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+        </section>
+
+
+        <section class="project-block" data-tags="performance 2022">
+            <div class="project-header">
+                <h2>Don’t look at the light</h2>
+                <div class="project-subtitle">Video performance, January, 2022</div>
+            </div>
+
+            <div class="carousel">
+                <img class="carousel-img" src="assets/images/11Perform/perform2.jpg" alt="Placeholder 1" />
+                <img class="carousel-img" src="assets/images/11Perform/perform1.jpeg" alt="Placeholder 2" />
+                <img class="carousel-img" src="assets/images/11Perform/perform3.jpeg" alt="Placeholder 3" />
+            </div>
+
+            <div class="project-text">
+                <p>In this work the artist put light and information on one step. They are everywhere and they may be impossible to perceive, killing and destroying.</p>
+                <p>We get used to looking at the bright light, although initially it seems impossible to look at it. Long eyes absorb clarity of vision, causing nausea and dizziness.</p>
+                <p>We’re going blind and numb. We get used to looking at the injustice of life, the distortion of information, the propaganda, even though it seems impossible at first to look at, which is outrageous.
+            We’re going blind and numb. The seeming impossibility of looking is replaced by addiction.</p>
+                <p>The habit takes away the strength from the struggle. What happens becomes natural and no longer causes the blinded pain.</p>
+            </div>
+
+            <!-- Line rotated at -2.39° -->
+            <div class="project-lines" style="transform: rotate(-2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Duration 5 min.</p>
+            </div>
+
+            <!-- Line rotated at 2.39° -->
+            <div class="project-lines" style="transform: rotate(2.39deg);"></div>
+
+            <div class="project-text">
+                <p>Project from the New Media in Contemporary Art program, Moscow School of Contemporary Art.</p>
+                <p><a href="https://www.instagram.com/reel/CzTQUXNCnPt/?igsh=aG0zeHQ4cXFxcGRm" class="underline" target="_blank" rel="noopener noreferrer">Watch the video.</a></p>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts/portfolio.js"></script>
+</body>
+</html>
