@@ -60,14 +60,14 @@ html, body {
   flex-direction: column;
   align-items: flex-start;
   gap: 8px; /* vertical space between filter rows */
-  padding: 10px 20px;
+  padding: 7px 20px;
   z-index: 90;
   font-size: 14px;
 }
 
 .filter-group {
   display: flex;
-  gap: 12px 20px;
+  gap: 12px 8px;
 }
 
 .filter-group span {
@@ -115,8 +115,6 @@ html, body {
   position: relative;
   overflow: hidden;  /* hide anything that would overflow its box */
 }
-
-
 
 .project-header h2 {
   font-size: 14px;
@@ -260,16 +258,12 @@ html, body {
   box-sizing: border-box;
 }
 
-
 .image-column {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex-shrink: 0;
 }
-
-
-
 
 .project-lines {
   width: 100%;
@@ -284,21 +278,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .filters {
-    flex-direction: column;
-    font-size: 13px;
-    gap: 4px;
-  }
 
-  .navbar {
-    font-size: 14px;
-    padding: 0 12px;
-  }
-
-  .project-text {
-    font-size: 12px;
-    padding: 10px 10px;
-  }
 
   .carousel-img.active {
     width: 60vw;
@@ -317,12 +297,12 @@ html, body {
     overflow-x: auto;      /* still allow horizontal panning if desired */
     overflow-y: visible;   /* let the body/page scroll vertically */
     position: absolute;
-    top: 80px;   /* same offset as before */
+    top: 12px;   /* same offset as before */
     left: 0;
     right: 0;
     bottom: auto; /* remove bottom:0 so wrapper can expand in height */
     display: flex;
-    gap: 32px;   /* gap remains between blocks */
+    gap: 20px;   /* gap remains between blocks */
     padding: 20px;
     white-space: normal;  /* allow text inside each block to wrap */
     scroll-behavior: smooth;
@@ -331,11 +311,11 @@ html, body {
 
   /* 2) Make each project‐block take full width (minus gutters) */
   .project-block {
-    flex: 0 0 90vw;         /* each block is ~90% of viewport width */
+    flex: 0 0 95vw;         /* each block is ~90% of viewport width */
     max-width: 500px;       /* cap it at 500px if viewport is bigger */
     min-width: auto;        /* remove the “min-width: 320px” so it can shrink freely */
     margin: 0 auto;         /* center each block on small screens */
-    padding: 12px;
+    padding: 15px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -365,8 +345,8 @@ html, body {
   }
 
   .project-text {
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 12px;
+    line-height: 1.5;
     max-height: none;           /* allow full height */
     overflow: visible;          /* let text flow normally */
     margin-bottom: 16px;
@@ -375,7 +355,7 @@ html, body {
   }
 
   .filters {
-    font-size: 13px;
+    font-size: 14px;
     gap: 6px;
     padding: 8px 12px;
   }
@@ -394,6 +374,23 @@ html, body {
     background: #EAF2FF;
     z-index: 90;
   }
+
+/* Fix the left text part of the first project block on wide screens */
+@media (min-width: 1024px) {
+  .project-block:first-child {
+    position: sticky;
+    left: 0;
+    top: 80px; /* adjust if needed based on nav+filters height */
+    background: #EAF2FF;
+    z-index: 5;
+    box-shadow: 10px 0 10px -10px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-block:first-child .carousel {
+    position: relative;
+    margin-top: 20px;
+  }
+}
 
   /* 7) Prevent unintended overflow on very tiny screens */
   html, body {
