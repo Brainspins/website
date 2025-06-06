@@ -29,15 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // === Wheel handler: scroll horizontally only on wide screens ===
     portfolioWrapper.addEventListener('wheel', (e) => {
-      // If viewport width is bigger than 768px, scroll horizontally; otherwise let vertical scroll happen
-      if (window.innerWidth > 768) {
-        if (e.deltaY !== 0) {
-          e.preventDefault();
-          portfolioWrapper.scrollLeft += e.deltaY;
-        }
+      const isHorizontalLayout = window.innerWidth > 768;
+      if (isHorizontalLayout && e.deltaY !== 0) {
+       e.preventDefault();
+       portfolioWrapper.scrollLeft += e.deltaY;
       }
-      // If small screen (<=768px), do nothing here so the page can scroll vertically.
     }, { passive: false });
+
   }
 
   // === In‐section carousel logic ===

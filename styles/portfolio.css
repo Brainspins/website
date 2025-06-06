@@ -67,7 +67,7 @@ html, body {
 
 .filter-group {
   display: flex;
-  gap: 12px 8px;
+  gap: 12px 7px;
 }
 
 .filter-group span {
@@ -89,7 +89,7 @@ html, body {
   padding: 20px;
   margin-top: 80px; /* space for nav + filters */
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
   width: 100%;
   box-sizing: border-box;
@@ -278,12 +278,9 @@ html, body {
 }
 
 @media (max-width: 768px) {
-
-
   .carousel-img.active {
     width: 60vw;
   }
-
   .carousel-img.left,
   .carousel-img.right {
     width: 20vw;
@@ -291,23 +288,24 @@ html, body {
 }
 /* === Responsive behavior for small screens === */
 @media (max-width: 768px) {
-  /* 1) Stack each project-block in a column (no horizontal‐only row) */
   .portfolio-wrapper {
-    flex-wrap: wrap;       /* allow blocks to stack in vertical rows */
-    overflow-x: auto;      /* still allow horizontal panning if desired */
-    overflow-y: visible;   /* let the body/page scroll vertically */
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: visible;  /* ❌ not enough for real scroll */
     position: absolute;
-    top: 12px;   /* same offset as before */
-    left: 0;
-    right: 0;
-    bottom: auto; /* remove bottom:0 so wrapper can expand in height */
+    top: 12px;
+    left: auto;
+    right: auto;
+    bottom: auto;
     display: flex;
-    gap: 20px;   /* gap remains between blocks */
+    gap: 20px;
     padding: 20px;
-    white-space: normal;  /* allow text inside each block to wrap */
+    white-space: normal;
     scroll-behavior: smooth;
     z-index: 10;
   }
+
 
   /* 2) Make each project‐block take full width (minus gutters) */
   .project-block {
@@ -354,37 +352,19 @@ html, body {
     padding: 0 8px;             /* slight inner padding */
   }
 
-  .filters {
-    font-size: 14px;
-    gap: 6px;
-    padding: 8px 12px;
-  }
-  .navbar {
-    font-size: 14px;
-    padding: 0 12px;
-  }
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .filters {
-    position: sticky;
-    top: 40px;                 /* just below the 40px navbar */
-    background: #EAF2FF;
-    z-index: 90;
-  }
+
 
 /* Fix the left text part of the first project block on wide screens */
 @media (min-width: 1024px) {
   .project-block:first-child {
-    position: sticky;
+    position: fixed;
     left: 0;
-    top: 80px; /* adjust if needed based on nav+filters height */
+    top: calc(40px + 40px); /* navbar + filters */
     background: #EAF2FF;
     z-index: 5;
     box-shadow: 10px 0 10px -10px rgba(0, 0, 0, 0.1);
   }
+
 
   .project-block:first-child .carousel {
     position: relative;

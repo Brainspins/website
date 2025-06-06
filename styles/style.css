@@ -16,26 +16,26 @@ html, body {
   overflow-x: hidden; /* prevent horizontal scrollbar */
 }
 
-/* === 2) Navigation Bar (fixed at top; matches portfolio style) === */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #EAF2FF;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  border-bottom: none;
-  z-index: 100;
-  font-size: 16px;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 40px;
+background: #EAF2FF;
+display: flex;
+align-items: center;
+gap: 20px;
+padding: 0 20px;
+border-bottom: none;
+z-index: 100;
+font-size: 16px;
 }
 
 .navbar a {
   text-decoration: none;
   color: #0E1158;
+  cursor: pointer;
 }
 
 .navbar a.active {
@@ -165,8 +165,8 @@ main {
 
 @media (max-width: 600px) {
   .navbar {
-    padding: 0 10px;
-    gap: 12px;
+    padding: 0 20px;
+    gap: 20px;
   }
   .intro-whats-on {
     padding: 10px 20px;
