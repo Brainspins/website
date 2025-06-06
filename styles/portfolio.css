@@ -292,7 +292,7 @@ html, body {
     flex-wrap: wrap;
     flex-direction: column;
     overflow-x: auto;
-    overflow-y: visible;  /* ❌ not enough for real scroll */
+    overflow-y: auto;  /* ❌ not enough for real scroll */
     position: absolute;
     top: 12px;
     left: auto;
@@ -372,10 +372,7 @@ html, body {
   }
 }
 
-  /* 7) Prevent unintended overflow on very tiny screens */
-  html, body {
-    overflow-x: hidden;
-  }
+
 }  
   
 

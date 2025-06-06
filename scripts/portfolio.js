@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // === Wheel handler: scroll horizontally only on wide screens ===
     portfolioWrapper.addEventListener('wheel', (e) => {
-      const isHorizontalLayout = window.innerWidth > 768;
-      if (isHorizontalLayout && e.deltaY !== 0) {
-       e.preventDefault();
-       portfolioWrapper.scrollLeft += e.deltaY;
+      const isWideScreen = window.innerWidth > 768;
+      if (isWideScreen && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault(); // only block if we're going to scroll horizontally
+        portfolioWrapper.scrollLeft += e.deltaY;
       }
     }, { passive: false });
 
