@@ -52,7 +52,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 40px 40px;
+  padding: 20px 40px;
   gap: 40px;
 }
 
