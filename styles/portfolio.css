@@ -246,7 +246,7 @@ html, body {
   flex-grow: 1;
 }
 .project-text {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
   text-align: justify;
   display: block;
@@ -254,7 +254,7 @@ html, body {
   word-break: break-word;
   width: 100%;
   max-width: 470px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   box-sizing: border-box;
 }
 
