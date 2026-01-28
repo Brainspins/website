@@ -62,7 +62,7 @@ html, body {
   gap: 8px; /* vertical space between filter rows */
   padding: 7px 20px;
   z-index: 90;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .filter-group {
@@ -117,7 +117,7 @@ html, body {
 }
 
 .project-header h2 {
-  font-size: 14px;
+  font-size: 16px;
   margin-bottom: 4px;
 }
 
