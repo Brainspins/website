@@ -44,6 +44,9 @@ html, body {
   color: #0E1158;
   cursor: pointer;
 }
+.pdf-link {
+  margin-left: auto;
+}
 
 .navbar a.active {
   color: red;
