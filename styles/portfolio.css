@@ -23,7 +23,7 @@ html, body {
   color: #0E1158;
 }
 
-/* === 2) Navigation Bar (Fixed at top) === */
+/* === 2) Navigation Bar (fixed at top; no border) === */
 .navbar {
   position: fixed;
   top: 0;
@@ -39,34 +39,33 @@ html, body {
   font-size: 16px;
   flex-wrap: wrap;
 }
-
 .navbar a {
+  
   color: #0E1158;
   cursor: pointer; 
-  text-decoration: none; /* Fix: Removes underline from all links */
 }
 
 .pdf-link {
   margin-left: auto;
   white-space: nowrap;
-  text-decoration: underline !important; /* Fix: Keeps only PDF underlined */
+  text-decoration: underline;
 }
 
 .navbar a.active {
   color: red;
 }
 
-/* === 3) Filter Buttons (Fixed below Navbar) === */
+/* === 3) Filter Buttons (fixed below navbar; no border) === */
 .filters {
   position: fixed;
-  top: 40px; 
+  top: 40px; /* sits right under the 40pxâ€tall navbar */
   left: 0;
   width: 100%;
   background: #EAF2FF;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px; 
+  gap: 8px; /* vertical space between filter rows */
   padding: 7px 20px;
   z-index: 90;
   font-size: 16px;
@@ -88,70 +87,190 @@ html, body {
   text-decoration: underline;
 }
 
-/* === 4) Wrapper Layout === */
 .portfolio-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 32px;
   padding: 20px;
-  margin-top: 100px; /* Space for fixed Navbar + Filters */
+  margin-top: 80px; /* space for nav + filters */
   overflow-x: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
   width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent text selecting while dragging horizontally */
+.portfolio-wrapper.dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .project-block {
+  /* each block is fixedâ€width at larger screens, but flexible on small */
   flex: 0 0 auto;
-  width: 90vw;       
-  max-width: 500px;  
-  min-width: 320px;  
+  width: 90vw;       /* at most 90% of viewport width */
+  max-width: 500px;  /* never exceed 500px wide */
+  min-width: 320px;  /* never narrower than 320px */
+  box-sizing: border-box;
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
+  overflow: hidden;  /* hide anything that would overflow its box */
 }
 
-/* === 5) Mobile Responsive Fixes === */
-@media (max-width: 768px) {
-  .navbar {
-    position: relative; /* Change to relative so it expands with content */
-    min-height: auto;
-  }
-
-  .filters {
-    position: relative; /* Stacks naturally under Navbar */
-    top: 0;
-    padding: 10px 20px;
-  }
-
-  .portfolio-wrapper {
-    margin-top: 0; /* No need for fixed margin on mobile now */
-    flex-direction: column;
-    overflow-x: hidden;
-  }
-
-  .project-block {
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .pdf-link {
-    margin-left: 0;
-    width: 100%;
-  }
+.project-header h2 {
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
-/* === 6) Desktop Specific Fix (Removed the 'stuck' behavior) === */
-@media (min-width: 1024px) {
-  /* Removed .project-block:first-child { position: fixed; } to prevent sticking */
+.project-subtitle {
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
-/* === 7) Visual Elements === */
+/* === 6) Carousel Styles === */
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 300px; /* adjust if needed */
+  margin-bottom: 16px;
+  overflow: visible; /* allow side images to show */
+}
+
+.carousel-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform-origin: center center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.carousel-img.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 3;
+  width: 220px;
+}
+
+.carousel-img.left {
+  transform: translate(calc(-50% - 140px), -50%) scale(0.8) rotateY(10deg);
+  opacity: 0.6;
+  z-index: 2;
+  width: 100px;
+}
+
+.carousel-img.right {
+  transform: translate(calc(-50% + 140px), -50%) scale(0.8) rotateY(-10deg);
+  opacity: 0.6;
+  z-index: 2;
+  width: 100px;
+}
+
+.carousel-img.hidden {
+  display: none;
+}
+
+/* === 7) Modal (fullscreen) Styles === */
+.carousel-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.carousel-modal .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal-carousel {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+  height: 80%;
+  overflow: visible;
+}
+
+.modal-carousel-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform-origin: center center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.modal-carousel-img.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 3;
+  width: 70vw;
+  max-width: 800px;
+}
+
+.modal-carousel-img.left {
+  transform: translate(calc(-50% - 300px), -50%) scale(0.8) rotateY(10deg);
+  opacity: 0.6;
+  z-index: 2;
+  width: 200px;
+}
+
+.modal-carousel-img.right {
+  transform: translate(calc(-50% + 300px), -50%) scale(0.8) rotateY(-10deg);
+  opacity: 0.6;
+  z-index: 2;
+  width: 200px;
+}
+
+.modal-carousel-img.hidden {
+  display: none;
+}
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+.project-text {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: justify;
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+  width: 100%;
+  max-width: 470px;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
 .project-lines {
   width: 100%;
   height: 1px;
@@ -159,12 +278,129 @@ html, body {
   margin: 8px 0;
 }
 
-.project-text {
-  font-size: 14px;
-  line-height: 1.5;
-  text-align: justify;
-  word-break: break-word;
+/* === 9) Slim scrollbar for wrapper (optional) === */
+.portfolio-wrapper::-webkit-scrollbar {
+  height: 8px;
 }
+
+@media (max-width: 768px) {
+  .carousel-img.active {
+    width: 60vw;
+  }
+  .carousel-img.left,
+  .carousel-img.right {
+    width: 20vw;
+  }
+}
+/* === Responsive behavior for small screens === */
+@media (max-width: 768px) {
+  .portfolio-wrapper {
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow-x: auto;
+    overflow-y: auto;  /* âŒ not enough for real scroll */
+    position: absolute;
+    top: 12px;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    white-space: normal;
+    scroll-behavior: smooth;
+    z-index: 10;
+  }
+
+
+  /* 2) Make each projectâ€block take full width (minus gutters) */
+  .project-block {
+    flex: 0 0 95vw;         /* each block is ~90% of viewport width */
+    max-width: 500px;       /* cap it at 500px if viewport is bigger */
+    min-width: auto;        /* remove the â€œmin-width: 320pxâ€ so it can shrink freely */
+    margin: 0 auto;         /* center each block on small screens */
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: visible;      /* allow text or images to expand downward */
+  }
+
+  .main-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .carousel {
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .carousel-img {
+    width: 80px;
+  }
+
+  .carousel-img.active {
+    width: 180px;
+  }
+
+  .project-text {
+    font-size: 12px;
+    line-height: 1.5;
+    max-height: none;           /* allow full height */
+    overflow: visible;          /* let text flow normally */
+    margin-bottom: 16px;
+    width: 100%;                
+    padding: 0 8px;             /* slight inner padding */
+  }
+
+
+
+/* Fix the left text part of the first project block on wide screens */
+@media (min-width: 1024px) {
+  .project-block:first-child {
+    position: fixed;
+    left: 0;
+    top: calc(40px + 40px); /* navbar + filters */
+    background: #EAF2FF;
+    z-index: 5;
+    box-shadow: 10px 0 10px -10px rgba(0, 0, 0, 0.1);
+  }
+
+
+  .project-block:first-child .carousel {
+    position: relative;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .pdf-link {
+    margin-left: 0;
+    width: 100%;
+    order: 2;
+    margin-top: 4px;
+    
+  }
+  .filters {
+    top: 40px;
+  }
+
+
+} 
+
+}  
+  
+
   
   
 
