@@ -40,7 +40,7 @@ html, body {
   flex-wrap: wrap;
 }
 .navbar a {
-  text-decoration: none;
+  
   color: #0E1158;
   cursor: pointer; 
 }
