@@ -40,7 +40,6 @@ html, body {
   flex-wrap: wrap;
 }
 .navbar a {
-  
   color: #0E1158;
   cursor: pointer;
   text-decoration: none;
@@ -313,7 +312,6 @@ html, body {
     z-index: 10;
   }
 
-
   /* 2) Make each project‐block take full width (minus gutters) */
   .project-block {
     flex: 0 0 95vw;         /* each block is ~90% of viewport width */
@@ -358,7 +356,7 @@ html, body {
     width: 100%;                
     padding: 0 8px;             /* slight inner padding */
   }
-
+}
 
 
 /* Fix the left text part of the first project block on wide screens */
@@ -371,8 +369,6 @@ html, body {
     z-index: 5;
     box-shadow: 10px 0 10px -10px rgba(0, 0, 0, 0.1);
   }
-
-
   .project-block:first-child .carousel {
     position: relative;
     margin-top: 20px;
