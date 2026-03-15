@@ -48,6 +48,7 @@ html, body {
 .pdf-link {
   margin-left: auto;
   white-space: nowrap;
+  text-decoration: underline;
 }
 
 .navbar a.active {
@@ -377,6 +378,16 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+
+  .pdf-link {
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    margin-top: 4px;
+  }
+
+}  
 
 }  
   
