@@ -389,11 +389,11 @@ html, body {
     margin-left: 0;
     width: 100%;
     order: 2;
-    margin-top: 1px;
+    margin-top: 4px;
   }
 
   .filters {
-    top: 70px;
+    top: 40px;
   }
 
 } 
