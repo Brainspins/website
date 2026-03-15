@@ -392,6 +392,9 @@ html, body {
     margin-top: 4px;
     padding: 0 8px;
   }
+  .filters {
+    top: 40px;
+  }
 
 
 } 
