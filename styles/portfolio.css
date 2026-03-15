@@ -48,8 +48,7 @@ html, body {
 .pdf-link {
   margin-left: auto;
   white-space: nowrap;
-  text-decoration: underline !important;
-  text-underline-offset: 3px;
+  text-decoration: underline;
 }
 
 .navbar a.active {
