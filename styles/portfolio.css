@@ -42,13 +42,14 @@ html, body {
 .navbar a {
   
   color: #0E1158;
-  cursor: pointer; 
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .pdf-link {
   margin-left: auto;
   white-space: nowrap;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .navbar a.active {
