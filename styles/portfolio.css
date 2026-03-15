@@ -42,13 +42,14 @@ html, body {
 .navbar a {
   
   color: #0E1158;
-  cursor: pointer; 
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .pdf-link {
   margin-left: auto;
   white-space: nowrap;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .navbar a.active {
@@ -379,25 +380,29 @@ html, body {
 }
 
 @media (max-width: 768px) {
-
   .navbar {
-    flex-wrap: wrap;
+    position: relative; /* Change from fixed to relative */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filters {
+    position: relative; /* Change from fixed to relative */
+    top: 0;             /* Reset top */
+    padding-top: 10px;
+  }
+
+  .portfolio-wrapper {
+    margin-top: 0;      /* Remove the large margin since elements aren't fixed anymore */
+    position: static;   /* Remove 'absolute' which is causing layout chaos */
   }
 
   .pdf-link {
     margin-left: 0;
-    width: 100%;
-    order: 2;
-    margin-top: 4px;
-    
+    width: auto;
+    order: 0;           /* Keeps it in natural flow */
   }
-  .filters {
-    top: 40px;
-  }
-
-
 } 
-
-}  
+  
   
 
