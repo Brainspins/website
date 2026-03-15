@@ -23,7 +23,7 @@ html, body {
   color: #0E1158;
 }
 
-/* === 2) Navigation Bar (fixed at top; no border) === */
+/* === 2) Navigation Bar === */
 .navbar {
   position: fixed;
   top: 0;
@@ -39,33 +39,34 @@ html, body {
   font-size: 16px;
   flex-wrap: wrap;
 }
+
 .navbar a {
   color: #0E1158;
-  cursor: pointer;
-  text-decoration: none;
+  cursor: pointer; 
+  text-decoration: none; /* Fix 1: Removes underline from Name/Portfolio/CV */
 }
 
 .pdf-link {
   margin-left: auto;
   white-space: nowrap;
-  text-decoration: underline !important;
+  text-decoration: underline !important; /* Fix 1: Keeps only this underlined */
 }
 
 .navbar a.active {
   color: red;
 }
 
-/* === 3) Filter Buttons (fixed below navbar; no border) === */
+/* === 3) Filter Buttons === */
 .filters {
   position: fixed;
-  top: 40px; /* sits right under the 40px‐tall navbar */
+  top: 40px; 
   left: 0;
   width: 100%;
   background: #EAF2FF;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px; /* vertical space between filter rows */
+  gap: 8px; 
   padding: 7px 20px;
   z-index: 90;
   font-size: 16px;
@@ -87,13 +88,14 @@ html, body {
   text-decoration: underline;
 }
 
+/* === 4) Wrapper & Layout === */
 .portfolio-wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 32px;
+  gap: 32 -px;
   padding: 20px;
-  margin-top: 80px; /* space for nav + filters */
+  margin-top: 100px; /* Adjusted to prevent overlap */
   overflow-x: auto;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -101,44 +103,27 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Prevent text selecting while dragging horizontally */
-.portfolio-wrapper.dragging {
-  cursor: grabbing;
-  user-select: none;
-}
-
 .project-block {
-  /* each block is fixed‐width at larger screens, but flexible on small */
   flex: 0 0 auto;
-  width: 90vw;       /* at most 90% of viewport width */
-  max-width: 500px;  /* never exceed 500px wide */
-  min-width: 320px;  /* never narrower than 320px */
+  width: 90vw;       
+  max-width: 500px;  
+  min-width: 320px;  
   box-sizing: border-box;
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
-  overflow: hidden;  /* hide anything that would overflow its box */
+  overflow: hidden;  
 }
 
-.project-header h2 {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
-.project-subtitle {
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-/* === 6) Carousel Styles === */
+/* === 5) Carousel Styles === */
 .carousel {
   position: relative;
   width: 100%;
-  height: 300px; /* adjust if needed */
+  height: 300px; 
   margin-bottom: 16px;
-  overflow: visible; /* allow side images to show */
+  overflow: visible; 
 }
 
 .carousel-img {
@@ -173,84 +158,7 @@ html, body {
   width: 100px;
 }
 
-.carousel-img.hidden {
-  display: none;
-}
-
-/* === 7) Modal (fullscreen) Styles === */
-.carousel-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.carousel-modal .close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-.modal-carousel {
-  position: relative;
-  width: 80%;
-  max-width: 1200px;
-  height: 80%;
-  overflow: visible;
-}
-
-.modal-carousel-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  transform-origin: center center;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.modal-carousel-img.active {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-  z-index: 3;
-  width: 70vw;
-  max-width: 800px;
-}
-
-.modal-carousel-img.left {
-  transform: translate(calc(-50% - 300px), -50%) scale(0.8) rotateY(10deg);
-  opacity: 0.6;
-  z-index: 2;
-  width: 200px;
-}
-
-.modal-carousel-img.right {
-  transform: translate(calc(-50% + 300px), -50%) scale(0.8) rotateY(-10deg);
-  opacity: 0.6;
-  z-index: 2;
-  width: 200px;
-}
-
-.modal-carousel-img.hidden {
-  display: none;
-}
-
-.project-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-grow: 1;
-}
+/* === 6) Text & Blocks === */
 .project-text {
   font-size: 14px;
   line-height: 1.5;
@@ -261,14 +169,6 @@ html, body {
   width: 100%;
   max-width: 470px;
   margin-bottom: 8px;
-  box-sizing: border-box;
-}
-
-.image-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-shrink: 0;
 }
 
 .project-lines {
@@ -278,127 +178,49 @@ html, body {
   margin: 8px 0;
 }
 
-/* === 9) Slim scrollbar for wrapper (optional) === */
-.portfolio-wrapper::-webkit-scrollbar {
-  height: 8px;
-}
-
-@media (max-width: 768px) {
-  .carousel-img.active {
-    width: 60vw;
-  }
-  .carousel-img.left,
-  .carousel-img.right {
-    width: 20vw;
-  }
-}
-/* === Responsive behavior for small screens === */
-@media (max-width: 768px) {
-  .portfolio-wrapper {
-    flex-wrap: wrap;
-    flex-direction: column;
-    overflow-x: auto;
-    overflow-y: auto;  /* ❌ not enough for real scroll */
-    position: absolute;
-    top: 12px;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    white-space: normal;
-    scroll-behavior: smooth;
-    z-index: 10;
-  }
-
-  /* 2) Make each project‐block take full width (minus gutters) */
-  .project-block {
-    flex: 0 0 95vw;         /* each block is ~90% of viewport width */
-    max-width: 500px;       /* cap it at 500px if viewport is bigger */
-    min-width: auto;        /* remove the “min-width: 320px” so it can shrink freely */
-    margin: 0 auto;         /* center each block on small screens */
-    padding: 15px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
-    overflow: visible;      /* allow text or images to expand downward */
-  }
-
-  .main-image img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .carousel {
-    max-width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
-
-  .carousel-img {
-    width: 80px;
-  }
-
-  .carousel-img.active {
-    width: 180px;
-  }
-
-  .project-text {
-    font-size: 12px;
-    line-height: 1.5;
-    max-height: none;           /* allow full height */
-    overflow: visible;          /* let text flow normally */
-    margin-bottom: 16px;
-    width: 100%;                
-    padding: 0 8px;             /* slight inner padding */
-  }
-}
-
-
-/* Fix the left text part of the first project block on wide screens */
+/* === 7) Desktop Specific Fix === */
 @media (min-width: 1024px) {
   .project-block:first-child {
     position: fixed;
     left: 0;
-    top: calc(40px + 40px); /* navbar + filters */
+    top: 80px; 
     background: #EAF2FF;
     z-index: 5;
     box-shadow: 10px 0 10px -10px rgba(0, 0, 0, 0.1);
   }
-  .project-block:first-child .carousel {
-    position: relative;
-    margin-top: 20px;
-  }
 }
 
+/* === 8) MOBILE FIXES === */
 @media (max-width: 768px) {
   .navbar {
-    position: relative; /* Change from fixed to relative */
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative; /* Fix 2: Stops the navbar from floating over filters */
+    padding-bottom: 10px;
   }
 
   .filters {
-    position: relative; /* Change from fixed to relative */
-    top: 0;             /* Reset top */
-    padding-top: 10px;
+    position: relative; /* Fix 2: Stacks filters under the navbar */
+    top: 0;
+    padding-top: 5px;
   }
 
   .portfolio-wrapper {
-    margin-top: 0;      /* Remove the large margin since elements aren't fixed anymore */
-    position: static;   /* Remove 'absolute' which is causing layout chaos */
+    margin-top: 10px; /* Fix 2: Removes the big gap */
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .project-block {
+    width: 95vw;
+    margin: 0 auto;
+    flex: none;
   }
 
   .pdf-link {
     margin-left: 0;
-    width: auto;
-    order: 0;           /* Keeps it in natural flow */
+    width: 100%;
+    margin-top: 5px;
   }
-} 
+}
   
   
 
