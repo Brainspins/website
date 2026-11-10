@@ -5,7 +5,7 @@ body {
   color: #EAF2FF;
 }
 
-/* === Navigation Bar === */
+/* === Navigation Bar (from portfolio.css) === */
 .navbar {
   position: fixed;
   top: 0;
@@ -32,13 +32,13 @@ body {
   color: red;
 }
 
-/* === Layout Content === */
+/* === Layout === */
 .contact-container {
-  padding: 40px 20px; /* Safe uniform padding */
-  margin-top: 40px;   /* Creates exact breathing room below your fixed 40px navbar */
+  padding: 80px 20px 50px; /* Adjusted top padding so it doesn't hide behind the fixed navbar */
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 600px; /* Keeps the container clean and readable */
 }
 
 .links {
@@ -50,12 +50,14 @@ body {
 .links a {
   color: #EAF2FF;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .links a:hover {
   color: red;
 }
 
+/* === Kit Form Theme Overrides === */
 .playground {
   width: 100%;
 }
@@ -117,19 +119,14 @@ body {
 
 /* === Mobile Responsiveness === */
 @media (max-width: 768px) {
-  body {
-    padding-top: 80px; /* Gives extra space on mobile if header text wraps to two rows */
-  }
-
   .navbar {
-    font-size: 14px;   /* Slightly drops text footprint so everything packs cleaner on 375px wide screens */
-    gap: 15px;         /* Tightens space between menu navigation links */
-    padding: 12px 15px;
-    justify-content: space-between; /* Spreads elements out beautifully across mobile boundaries */
+    font-size: 16px;
+    padding: 0 20px;
+    height: 40px;
   }
 
   .contact-container {
-    padding: 10px 15px 40px;
+    padding: 80px 20px 40px;
     text-align: left;
     gap: 30px;
   }
@@ -143,4 +140,3 @@ body {
     font-size: 16px;
   }
 }
-
