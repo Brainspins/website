@@ -119,14 +119,19 @@ body {
 
 /* === Mobile Responsiveness === */
 @media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Gives extra space on mobile if header text wraps to two rows */
+  }
+
   .navbar {
-    font-size: 16px;
-    padding: 0 20px;
-    height: 40px;
+    font-size: 14px;   /* Slightly drops text footprint so everything packs cleaner on 375px wide screens */
+    gap: 15px;         /* Tightens space between menu navigation links */
+    padding: 12px 15px;
+    justify-content: space-between; /* Spreads elements out beautifully across mobile boundaries */
   }
 
   .contact-container {
-    padding: 80px 20px 40px;
+    padding: 10px 15px 40px;
     text-align: left;
     gap: 30px;
   }
@@ -140,3 +145,4 @@ body {
     font-size: 16px;
   }
 }
+
