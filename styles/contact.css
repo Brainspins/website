@@ -7,19 +7,19 @@ body {
 
 /* === Navigation Bar (from portfolio.css) === */
 .navbar {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 40px;
-background: #0E1158;
-display: flex;
-align-items: center;
-gap: 20px;
-padding: 0 20px;
-border-bottom: none;
-z-index: 100;
-font-size: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #0E1158;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  border-bottom: none;
+  z-index: 100;
+  font-size: 16px;
 }
 
 .navbar a {
@@ -32,16 +32,17 @@ font-size: 16px;
   color: red;
 }
 
+/* === Layout === */
 .contact-container {
-  padding: 50px 20px;
+  padding: 80px 20px 50px; /* Adjusted top padding so it doesn't hide behind the fixed navbar */
   display: flex;
   flex-direction: column;
   gap: 40px;
+  max-width: 600px; /* Keeps the container clean and readable */
 }
 
 .links {
   display: flex;
-  top: 40px;
   gap: 30px;
   font-size: 16px;
 }
@@ -49,12 +50,74 @@ font-size: 16px;
 .links a {
   color: #EAF2FF;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.playground {
-  font-size: 12px;
-  color: #0E1158; /* hidden visually, as in your layout */
+.links a:hover {
+  color: red;
 }
+
+/* === Kit Form Theme Overrides === */
+.playground {
+  width: 100%;
+}
+
+/* Overriding Kit container styling */
+.playground .formkit-form[data-uid="466218bded"] {
+  background-color: transparent !important;
+  border: 1px dashed #EAF2FF !important; /* Elegant modern layout border */
+  border-radius: 0px !important; /* Sharp corners matching a tech aesthetic */
+  max-width: 100% !important;
+}
+
+/* Forcing headers and copy to inherit your 'Tomorrow' font and light colors */
+.playground .formkit-header h2,
+.playground .formkit-subheader p,
+.playground .formkit-guarantee p {
+  font-family: 'Tomorrow', sans-serif !important;
+  color: #EAF2FF !important;
+}
+
+.playground .formkit-header h2 {
+  font-size: 24px !important;
+  text-align: left !important;
+}
+
+.playground .formkit-subheader p,
+.playground .formkit-guarantee p {
+  text-align: left !important;
+}
+
+/* Input Fields styling */
+.playground .formkit-input {
+  font-family: 'Tomorrow', sans-serif !important;
+  background-color: transparent !important;
+  border: 1px solid #EAF2FF !important;
+  color: #EAF2FF !important;
+  border-radius: 0px !important;
+}
+
+.playground .formkit-input::placeholder {
+  color: #EAF2FF !important;
+  opacity: 0.5;
+}
+
+/* Red Interactive Action Button */
+.playground .formkit-submit {
+  font-family: 'Tomorrow', sans-serif !important;
+  background-color: red !important;
+  color: #0E1158 !important; /* High contrast text on top of the red background */
+  border-radius: 0px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+}
+
+/* Hidden Badge styling */
+.playground .formkit-powered-by-convertkit-container {
+  display: none !important; /* Clean minimal presentation */
+}
+
+/* === Mobile Responsiveness === */
 @media (max-width: 768px) {
   .navbar {
     font-size: 16px;
@@ -75,10 +138,5 @@ font-size: 16px;
 
   .links a {
     font-size: 16px;
-  }
-
-  .playground {
-    font-size: 12px;
-    margin-top: 20px;
   }
 }
