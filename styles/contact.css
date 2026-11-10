@@ -1,18 +1,19 @@
-body {
-  margin: 0;
+html, body {
+  height: 100%;
   font-family: 'Tomorrow', sans-serif;
-  background-color: #0E1158;
-  color: #EAF2FF;
+  background: #0E1158; /* Contact color inversion */
+  color: #EAF2FF;      /* Contact color inversion */
+  overflow-x: hidden; /* prevent horizontal scrollbar */
 }
 
-/* === Navigation Bar (from portfolio.css) === */
+/* Identical setup to index layout */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 40px;
-  background: #0E1158;
+  background: #0E1158; /* Contact color inversion */
   display: flex;
   align-items: center;
   gap: 20px;
@@ -24,7 +25,7 @@ body {
 
 .navbar a {
   text-decoration: none;
-  color: #EAF2FF;
+  color: #EAF2FF; /* Contact color inversion */
   cursor: pointer;
 }
 
@@ -32,15 +33,18 @@ body {
   color: red;
 }
 
-/* === Layout === */
+/* === 3) Main content padding to account for fixed navbar === */
 .contact-container {
-  padding: 80px 20px 50px; /* Adjusted top padding so it doesn't hide behind the fixed navbar */
+  padding-top: 40px; /* height of navbar */
   display: flex;
   flex-direction: column;
   gap: 40px;
-  max-width: 600px; /* Keeps the container clean and readable */
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px; /* Matches the top margin spacing from intro layout padding */
 }
 
+/* === 4) Content Layout Blocks === */
 .links {
   display: flex;
   gap: 30px;
@@ -50,11 +54,6 @@ body {
 .links a {
   color: #EAF2FF;
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.links a:hover {
-  color: red;
 }
 
 /* === Kit Form Theme Overrides === */
