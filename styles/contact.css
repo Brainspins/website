@@ -1,25 +1,18 @@
-/* === 1) Global reset & base styles === */
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
   font-family: 'Tomorrow', sans-serif;
-  background: #0E1158; /* Contact theme dark inversion */
-  color: #EAF2FF;      /* Contact theme light inversion */
-  overflow-x: hidden; 
+  background-color: #0E1158;
+  color: #EAF2FF;
 }
 
+/* === Navigation Bar === */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 40px;
-  background: #0E1158; /* Contact theme dark inversion */
+  background: #0E1158;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -31,7 +24,7 @@ html, body {
 
 .navbar a {
   text-decoration: none;
-  color: #EAF2FF; /* Contact theme light inversion */
+  color: #EAF2FF;
   cursor: pointer;
 }
 
@@ -39,52 +32,32 @@ html, body {
   color: red;
 }
 
-/* === 3) Main content padding to account for fixed navbar === */
-main {
-  padding-top: 40px; /* height of navbar */
-}
-
-/* === 4) Intro section (two-column) === */
-.intro-whats-on {
+/* === Layout Content === */
+.contact-container {
+  padding: 40px 20px; /* Safe uniform padding */
+  margin-top: 40px;   /* Creates exact breathing room below your fixed 40px navbar */
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 40px;
+  flex-direction: column;
   gap: 40px;
 }
 
-/* Container to constrain width on large screens */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Two-column layout inside container */
-.two-column {
-  display: flex;
-  gap: 40px;
-  width: 100%;
-}
-
-/* === 5) Links column styling (shares .intro-text rules) === */
 .links {
-  flex: 1;
   display: flex;
-  flex-direction: column; /* Stacks links vertically */
-  gap: 20px;
+  gap: 30px;
   font-size: 16px;
-  line-height: 1.7;
 }
 
 .links a {
   color: #EAF2FF;
   text-decoration: none;
-  width: fit-content;
 }
 
 .links a:hover {
   color: red;
+}
+
+.playground {
+  width: 100%;
 }
 
 /* Overriding Kit container styling */
