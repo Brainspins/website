@@ -118,15 +118,31 @@ body {
 }
 
 /* === Mobile Responsiveness === */
+
+
+
+/* === Mobile Responsiveness === */
 @media (max-width: 768px) {
   .navbar {
-    font-size: 16px;
-    padding: 0 20px;
-    height: 40px;
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .navbar a {
+    font-size: 13px;
+    white-space: nowrap;
   }
 
   .contact-container {
-    padding: 80px 20px 40px;
+    padding: 80px 15px 40px;
     text-align: left;
     gap: 30px;
   }
@@ -140,3 +156,4 @@ body {
     font-size: 16px;
   }
 }
+
